@@ -21,6 +21,9 @@ buildscript {
 
         // Android Build Server
         maven { url = uri("../nowinandroid-prebuilts/m2repository") }
+
+        // For Hilt snapshot
+        maven("https://oss.sonatype.org/content/repositories/snapshots/")
     }
     dependencies {
         classpath(libs.google.oss.licenses.plugin) {

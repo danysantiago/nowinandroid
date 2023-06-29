@@ -20,6 +20,8 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        // For Hilt snapshot
+        maven("https://oss.sonatype.org/content/repositories/snapshots/")
     }
 }
 
@@ -28,6 +30,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // For Hilt snapshot
+        maven("https://oss.sonatype.org/content/repositories/snapshots/")
     }
 }
 rootProject.name = "nowinandroid"
@@ -39,6 +43,7 @@ include(":core:data")
 include(":core:data-test")
 include(":core:database")
 include(":core:datastore")
+include(":core:datastore-proto")
 include(":core:datastore-test")
 include(":core:designsystem")
 include(":core:domain")
