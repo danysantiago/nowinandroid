@@ -52,6 +52,10 @@ protobuf {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
     implementation(project(":core:common"))
     implementation(project(":core:model"))
@@ -61,4 +65,11 @@ dependencies {
 
     testImplementation(project(":core:datastore-test"))
     testImplementation(project(":core:testing"))
+}
+
+androidComponents.beforeVariants {
+    android.sourceSets.register(it.name) {
+        java.srcDir(buildDir.resolve("generated/source/proto/${it.name}/java"))
+        kotlin.srcDir(buildDir.resolve("generated/source/proto/${it.name}/kotlin"))
+    }
 }
